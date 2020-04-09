@@ -20,58 +20,8 @@ const makeXRController = (gl, id) => {
   };
 };
 
-// const controller =  {
-//   over: [],
-//   onSelect: () => {over.forEach()},
-//   onSelectStart: () => {over.forEach()},
-//   onSelectEnd: () => {over.forEach()}
-//   frame:
-// }
-
-//     const getIntersection = (controller) => {
-//       const tempMatrix = new THREE.Matrix4();
-//       tempMatrix.identity().extractRotation(controller.matrixWorld);
-//       raycaster.ray.origin.setFromMatrixPosition(controller.matrixWorld);
-//       raycaster.ray.direction.set(0, 0, -1).applyMatrix4(tempMatrix);
-//       return raycaster.intersectObjects(scene.__interaction, true);
-//     };
-// function Controller(props) {
-//   const over = useRef([]);
-
-//   const {controller, grip, model} = useMemo(() => {
-//     const controller = gl.xr.getController(id);
-//     const grip = gl.xr.getControllerGrip(id);
-//     const model = factory.createControllerModel(grip);
-//     const raycaster = new Raycaster();
-//     return {controller, grip, model}
-//   },[id]);
-
-//   useFrame(() => {
-//       const intersections = getIntersection(controller);
-
-//   });
-
-//   useEffect(() => {
-//     const onSelect = () => {
-//       over.forEach(it => {
-
-//       })
-//     }
-//     controller.addEventListener('select', onSelect);
-//   }, []);
-
-//   return <>
-//           <primitive object={controller} />
-//           <primitive object={grip}>
-//             <primitive object={model} />
-//           </primitive>
-//         </>
-// }
-
-// const raycaster = new Raycaster();
-
 function Controllers() {
-  const { gl, scene, raycaster, events, intersect } = useThree();
+  const { gl, raycaster, events, intersect } = useThree();
 
   const prepareRay = useCallback((controller) => {
     const tempMatrix = new THREE.Matrix4();
@@ -127,7 +77,7 @@ function Controllers() {
   );
 }
 
-function App(props) {
+function App() {
   return (
     <Canvas
       vr
